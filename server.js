@@ -1,14 +1,15 @@
 const express = require('express');
-const path = require('path');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const cors = require('cors');
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public'))); // serve static files
+app.use(express.static('public'));
 
 app.get('/weather', async (req, res) => {
   const { location, unit } = req.query;
@@ -25,4 +26,6 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

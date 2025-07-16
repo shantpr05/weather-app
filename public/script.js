@@ -51,7 +51,7 @@ function getBackgroundImage(condition) {
 async function fetchGif(query) {
   try {
     const giphyApiKey = 'YOUR_GIPHY_API_KEY';
-    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${encodeURIComponent(query)}`);
+    const response = await fetch(`/api/weather?location=${encodeURIComponent(location)}&unit=${unit}`);
     const gifData = await response.json();
     const gifUrl = gifData.data.images.original.url;
 

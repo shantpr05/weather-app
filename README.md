@@ -1,4 +1,5 @@
 # Weather Forecast Site 🌦️
+Live: https://shantpr05.github.io/weather-app/
 This is a simple weather forecast site that allows users to search for weather information in a specific location using the Visual Crossing Weather API. Users can toggle between Fahrenheit and Celsius for temperature display, and the page changes background based on the weather conditions. Optionally, a weather-related GIF can also be displayed using the Giphy API.
 ## Features
 - **Search weather by location**: Users can enter any location to see the current weather.
